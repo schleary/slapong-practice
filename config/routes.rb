@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'blog/index'
+  get '/blog/index'
 
-  get 'home/index'
+  get '/home/index'
 
-  root to: "home#index"
+  root              to: "home#index"
+
+  get '/posts',     to: 'posts#index', as: :posts
+  get '/posts/new', to: 'posts#new', as: :new_post
 
 
   # The priority is based upon order of creation: first created -> highest priority.
